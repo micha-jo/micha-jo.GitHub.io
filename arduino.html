@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NovaMake</title>
+    <link rel="icon" sizes="32*32" type="image/png" href="./images/robotsEnCircuitImprimés1.jpg" />
+    <link type="text/css" media="screen" rel="stylesheet" href="stylepagearduino.css" />
+    <link rel="stylesheet" href="./librairiecss/prism.css">
+    <script type="text/javascript" src="./librairieJS/prism.js"></script>
+  </head>
+
+  <body>
+
+    <header>
+      <nav role="navigation">
+        <div class="icons"><a href="#"></a></div>
+        <ul>
+          <li><a href="index.html">NovaMake</a></li>
+          <li><a href="arduino.html">Arduino</a></li>
+          <li><a href="nousContacter.html">Nous contacter</a></li>
+        </ul>
+      </nav>
+      <h1>Arduino</h1>
+      <hr />
+    </header>
+
+    <div class="lesDeuxPartie">
+      <div class="partiesecondaire">
+        <ul>
+          <li><a href="#definition">Qu'est ce qu'arduino?</a>
+              <ul>
+                <li><a href="materiel">Le materiel</a></li>
+                <li><a href="logiciel">Le logiciel</a></li>
+              </ul>
+          </li>
+          <li><a href="generalite">La carte Arduino</a>
+            <ul>
+              <li><a href="#port">Les différents type de signaux</a></li>
+            </ul>
+          </li>
+          <li><a href="programme">Le language de programation avec arduino</a>
+            <ul>
+              <li><a href="#codemin">Instruction minimale</a></li>
+              <li><a href="#variables">Les variables</a></li>
+              <li><a href="#structurecontrole">Les structures de contrôle</a>
+                <ul>
+                  <li><a href="#si">L'instruction Si (if)</a></li>
+                  <li><a href="#changer">L'instruction changer (switch)</a></li>
+                  <li><a href="#pour">La boucle pour (for)</a></li>
+                  <li><a href="#tantQue">La boucle tant que (while)</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li><a href="#bibliotheque">bibliotheque</a>
+            <ul>
+              <li><a href="#bouton">Les boutons</a></li>
+              <li><a href="#potentiometre">Les potentiometres</a></li>
+              <li><a href="#led">Les leds</a></li>
+              <li><a href="#ledrgb">Les leds RGBs</a></li>
+              <li><a href="#buzzeractif">Les buzzers actifs</a></li>
+              <li><a href="#buzzerpassif">Les buzzers passifs</a></li>
+              <li><a href="#servomoteur">Les servos moteurs</a></li>
+              <li><a href="#capteurultrasons">Les capteurs ultrasons</a></li>
+              <li><a href="#"></a></li>
+              <li><a href="#"></a></li>
+              <li><a href="#"></a></li>
+              <li><a href="#"></a></li>
+              
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+
+      <div class="partieprincipale">
+        <section id="definition">
+          <h2>Qu'est ce qu'arduino?</h2>
+          <blockquot
+            cite="https://www.positron-libre.com/electronique/arduino/arduino.php">
+            Arduino® est un ensemble matériel et logiciel qui permet d'apprendre l'électronique (en s'amusant) tout en se familiarisant avec la programmation informatique. Arduino est en source libre; vous pouvez donc télécharger le schéma d'origine et l'utiliser pour élaborer votre propre carte et la vendre sans payer des droits d'auteur.
+          </blockquot>
+
+          <article id="materiel">
+            <h3>Le materiel</h3>
+            <blockquot
+              cite="https://www.positron-libre.com/electronique/arduino/arduino.php">
+              Une carte Arduino est un cerveau qui permet de rendre intelligent des systèmes électroniques et d'animer des dispositifs mécaniques.
+            </blockquot>
+            <p>
+              Les Arduino® sont des cartes électronique programable ( dotées d'un processeur et de mémoire) qui vont ressevoir des données émise par un <strong>capteur</strong> (temperature, humidité, potentiomètres...) et va transmettre des données <em>&quot;un message&quot;</em> à des recepteurs (leds, moteurs...). vous pouvez les trouver sous plusieur tailles et sous plusieurs formes, les principaux type de carte sont les arduino Nano, arduino Uno et les arduino Mega
+            </p>
+            <div class="troisTypeArduino">
+              <figure>
+                <figcaption>Arduino Nano</figcaption>
+                <img src="./images/arduinoNano.jpg" alt="Arduino Nano" />
+              </figure>
+              <figure>
+                <figcaption>Arduino Uno</figcaption>
+                <img src="./images/arduinoUno.jpg" alt="Arduino Uno" />
+              </figure>
+              <figure>
+                <figcaption>Arduino Mega</figcaption>
+                <img src="./images/arduinoMega.jpg" alt="Arduino Mega" />
+              </figure>
+            </div>
+          </article>
+          <article id="logiciel">
+            <h3>Le logiciel</h3>
+            <blockquot
+              cite="https://www.positron-libre.com/electronique/arduino/arduino.php">
+              L'IDE Arduino est le logiciel qui permet de programmer les cartes
+              Arduino.
+            </blockquot>
+            <blockquot
+              cite="https://www.positron-libre.com/electronique/arduino/arduino.php">
+              Les créateurs de Arduino ont développé un logiciel pour que la programmation des cartes arduino soit visuelle, simple et complète à la fois. C'est ce que l'on appelle une IDE, qui signifie Integrated Development Environment. <br />  
+              <a href="https://www.arduino.cc/en/software">Telecharger l'IDE Arduino®</a>
+            </blockquot>
+            
+            <div class="imageAveclegende">
+              <div class="ideArduino"><img height ="500"src="./images/ideArduino.jpg" alt="Fenêtre de l'IDE Arduino"></div>
+              <p>Fenêtre de l'IDE Arduino</p>
+            </div>
+          </article>
+        </section>
+
+        <section id="generalite">
+          <h2>La carte Arduino</h2>
+          
+          <article id="composants"></article>
+            <div class="imageAveclegende">
+              <div class="schemArduino"><img height ="400"src="./images/shemaArduino.jpg" alt="Schéma d'une carte Arduino® Uno"></div>
+              <p>Schéma d'une carte Arduino® Uno</p>
+            </div>
+
+          <article id="port"></article>
+          <h3>Les différents type de signaux</h3>
+          <div class="imageAveclegende">
+            <div class="shemaPortArduinoNano"><img height ="400"src="./images/shemaPortArduinoNano.png" alt="Schéma des port d'une carte arduino Nano"></div>
+            <p>Schéma des port d'une carte arduino Nano</p>
+          </div>
+          
+        </section>
+        <section id="programme">
+          <h2>Le language de programation avec arduino</h2>
+          <p>Un langage de programmation est un langage permettant à un être humain d'écrire un ensemble d'instructions (code source) qui seront directement converties en langage machine grâce à un compilateur (c'est la compilation). L'exécution d'un programme Arduino s'effectue de manière séquentielle, c'est-à-dire que les instructions sont exécutées les unes à la suite des autres.</p>
+        </section>
+          
+          <article id="codemin"></article>
+          <article id="variables"></article>
+
+          <article id="operateurs">
+            <h3>Les opérateurs</h3>
+
+            <table class="blueTable">
+              <caption>Les opérateurs</caption>
+              <thead>
+                <tr>
+                  <th>Symboles</th>
+                  <th>Signification</th>
+                </tr>
+              </thead>
+            
+              <tbody>
+                
+                <tr>
+                  <td>==</td>
+                <td>&eacute;gale &agrave;: (attention diff&eacute;rent de "=" qui permet de stocker une valeur dans une variable</td>
+                </tr>
+                <tr>
+                  <td>&lt;=</td>
+                  <td>Inf&eacute;rieur ou &eacute;gale &agrave;</td>
+                </tr>
+                <tr>
+                  <td>&gt;=</td>
+                  <td>Sup&eacute;rieur ou &eacute;gale &agrave;</td>
+                </tr>
+                <tr>
+                  <td>!=</td>
+                  <td>Diff&eacute;rent de</td>
+                </tr>
+                <tr>
+                  <td>&amp;&amp;</td>
+                  <td>Et </td>
+                </tr>
+                <tr>
+                  <td>||</td>
+                  <td>Ou</td>
+                </tr>
+                <tr>
+                  <td>+</td>
+                  <td>Addition</td>
+                </tr>
+                <tr>
+                  <td>-</td>
+                  <td>Soustraction</td>
+                </tr>
+                <tr>
+                  <td>*</td>
+                  <td>Multiplication</td>
+                </tr>
+                <tr>
+                  <td>/</td>
+                  <td>Division</td>
+                </tr>
+                <tr>
+                  <td>%</td>
+                  <td>Modulo: reste de la division</td>
+                </tr>
+                <tr>
+                  <td>x ++ ou x--</td>
+                  <td>x = x+1 ou x = x-1</td>
+                </tr>
+                <tr>
+                  <td>&nbsp; </span>x *= y</td>
+                  <td>&ndash; y ou x = x * y</td>
+                </tr>
+              </tbody>
+              </table>
+          </article>
+
+        </section>
+        <section id="structurecontrole">
+          <h3>Les structures de contrôle</h3>
+          <p>Les structures de contrôle sont des instruction dans le language de programations. Elles sont utilisées pour commander le déroulement d'un programme el le devier dans une certaine direction</p>
+          
+          <article id="si">
+            <h4>L'instruction Si (if)</h4>
+            <p>Le terme Si fait appelle à une hypothèse ou à un cas de figure précis qui déterminerait une décision d'action. if exécutera son bloc d'instructions <strong>seulement si la condition définit est remplie</strong>.</p>
+            
+            <pre><code class="language-arduino">if (condition 1; condition 2...){       //Si la conditon 1 et la conditon 2 sont validé 
+    Instruction 1;                        //Alors le programme réalise l'instruction 1 et l'instruction 2 
+    Instruction 2;
+    ...
+    }
+  else if (condition 3; condition 4...){ //Sinon si la conditon 3 et la conditon 4 sont validé 
+    Instruction 3;                       //Alors le programme réalise l'instruction 3 et l'instruction 4
+    Instruction 4;
+    ...
+    }
+  else{                                  //Sinon
+    Instruction 5;                       //Le progrmme réalise l'instruction 5. 
+    ...
+    }</code></pre>
+
+          </article>
+
+          <article id="changer">
+            <h4>L'instruction changer (switch)</h4>
+            
+            <pre><code class="language-arduino"></code></pre>
+          </article>
+
+          <article id="pour">
+            <h4>La boucle pour (for)</h4>
+          </article>  
+
+          <article id="tantQue">
+            <h4>La boucle tant que (while)</h4>
+          </article>  
+
+        </section>
+        <section id="bibliotheque">
+          <h2>bibliotheque</h2>
+            
+          <article class="led">
+            <h3>Les leds</h3>
+            <p>Une LED est un composant capable d’émettre de la lumière lorsqu’il est parcouru par un courant électrique. </p>
+            <div class="remarque"> 
+              <p>Elle ne laisse passer le courant électrique que dans un seul sens, pour que le courant puisse passer: 
+                <ul>
+                  <li>la cathode (&quot-&quot , patte courte) doit être connecté du coté de la masse (GND).</li>
+                  <li>l’anode (&quot+&quot, patte longue) doit être connecté du coté du port numérique.</li>
+                </ul>
+              </p>
+            </div> 
+            <div class="montage">
+              <h4>Montage</h4>
+              <div class="composantschema">
+                <div class="composant">
+                  <h5>Composants</h5>
+                  <ul>
+                    <li>Une carte Arduino</li>
+                    <li>Une led rouge</li>
+                    <li>Une resistance de 220&Omega;</li>
+                  </ul>
+                </div>
+                <div class="schema">
+                  <img height="400" src="./images/montgeLed.png" alt="montage avec une led">
+                </div>
+              </div>
+            </div>
+          
+            <div class="code">
+              <h4>Code</h4>
+              <pre><code class="language-arduino">#define ledRouge 2            //Declaration de la led rouge sur la broche (pin) 2
+
+void setup() {
+  pinMode(ledRouge, OUTPUT);   //initialisation de ledRouge comme une sortie (output)
+}
+
+void loop() {
+  digitalWrite(ledRouge, HIGH);//Allume la led, definie ledRouge sur le niveau haut
+  delay(1000);                 //Le programme attend 1 seconde avant d'executer la prochaine instruction
+  digitalWrite(ledRouge, LOW); //Etteind la led, definie ledRouge sur le niveau bas
+  delay(1000);                 //Le programme attend 1 seconde avant d'executer la prochaine instruction
+}</code></pre>
+            </div>
+          </article>
+          
+          <article class="bouton">
+            <h3>Les boutons</h3>
+
+            <p></p>
+            <div class="remarque"> 
+              <p></p>
+            </div> 
+
+            <div class="montage">
+              <h4>Montage</h4>
+              <div class="composantschema">
+                <div class="composant">
+                  <h5>Composants</h5>
+                  <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </div>
+                <div class="schema">
+                  <img height="400" src="" alt="">
+                </div>
+              </div>
+            </div>
+          
+            <div class="code">
+              <h4>Code</h4>
+              <pre><code class="language-arduino"></code></pre>
+            </div>
+          </article>
+
+          <article class="potentiometre">
+            <h3>Les potentiometres</h3>
+          </article>
+
+          <article class="">
+            <h3></h3>
+          </article>
+
+          <article class="">
+            <h3></h3>
+          </article>
+
+          <article class="">
+            <h3></h3>
+          </article>
+
+          <article class="">
+            <h3></h3>
+          </article>
+
+          <article class="">
+            <h3></h3>
+          </article>
+
+          <article class="">
+            <h3></h3>
+          </article>
+        
+        </section>
+    
+    
+    
+      </div>
+  </div>
+  </body>
+</html>
+
+

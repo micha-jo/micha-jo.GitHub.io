@@ -1,0 +1,28 @@
+*{
+    padding: 0px; 
+    margin: 0px;
+}
+
+.icons
+{
+    background: url(./images/robotsEnCircuitImprimés1.jpg) no-repeat;
+    height: 32px;
+    width: 32px;
+    margin: 12px;
+}
+
+header {
+    background: no-repeat url(./images/personneEntrainDeFaireUnMontageArduino.jpg);
+    height: 100vh;
+}
+nav{
+    position: absolute;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    
+
+}
+ul {
+    display:flex;
+}

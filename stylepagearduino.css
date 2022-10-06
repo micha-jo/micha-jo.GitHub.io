@@ -1,0 +1,49 @@
+
+
+
+table.blueTable {
+    background-color: #EEEEEE;
+    width: 75%;
+    text-align: left;
+    border-collapse: collapse;
+  }
+  table.blueTable td, table.blueTable th {
+    border: 1px solid #AAAAAA;
+    padding: 3px 2px;
+  }
+  table.blueTable tbody td {
+    font-size: 13px;
+  }
+  table.blueTable tr:nth-child(even) {
+    background: #D0E4F5;
+  }
+  table.blueTable thead {
+    
+    background: linear-gradient(to bottom, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
+    border-bottom: 2px solid #444444;
+    font-size: 15px;
+    font-weight: bold;
+    color: #FFFFFF;
+  }
+
+.troisTypeArduino{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    
+}
+.lesDeuxPartie  {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+}
+
+.composantschema{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+  
+
+  
+  
