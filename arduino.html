@@ -315,9 +315,10 @@ void loop() {
           <article class="bouton">
             <h3>Les boutons</h3>
 
-            <p></p>
+            <p>Un bouton poussoir est un interrupteur (ou contacteur) monostable : il retourne seul dans la position repos (« relâché »). Un bouton poussoir fournit une information logique (Appuyé / Relâché).</p>
             <div class="remarque"> 
-              <p></p>
+              <p>Les connecteur 1&amp;3 et 2&amp;4 sont relié entre eux.</p>
+              <img height="200"src="./images/bouton.jpg" alt="bouton poussoir">
             </div> 
 
             <div class="montage">
@@ -326,19 +327,38 @@ void loop() {
                 <div class="composant">
                   <h5>Composants</h5>
                   <ul>
-                    <li></li>
-                    <li></li>
-                    <li></li>
+                    <li>Carte arduino</li>
+                    <li>Resistance de 10K	&Omega;</li>
+                    <li>bouton poussoir</li>
                   </ul>
                 </div>
                 <div class="schema">
-                  <img height="400" src="" alt="">
+                  <img height="400" src="./images/montgebouton.png" alt="schema de montage d'un bouton poussoir">
                 </div>
               </div>
             </div>
           
             <div class="code">
-              <h4>Code</h4>
+              <h4>Code 1: Bouton poussoir</h4>
+              <pre><code class="language-arduino">#define bouton 2                                  //declaration de la variable boouton connecté à la broche 2
+
+void setup()
+{
+  pinMode(bouton, INPUT);                         //initialisation du bouton comme étant une entrée 
+  Serial.begin(9600);                             //initialisation du port Serie 
+}
+
+void loop()
+{
+    
+  if (digitalRead(bouton) == HIGH){                //si le bouton est sur l'état haut 
+    Serial.println ("le bouton n'est pas appuyer");//alors on affiche: "le bouton n'est pas appuyer" dans le port serie
+  }
+  else {                                           //sinon
+    Serial.println ("le bouton est appuyer");      //on affiche: "le bouton est appuyer" dans le port serie
+  }
+}</code></pre>
+              <h4>Code 2: Interupteur</h4>
               <pre><code class="language-arduino"></code></pre>
             </div>
           </article>
