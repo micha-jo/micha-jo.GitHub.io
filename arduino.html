@@ -47,7 +47,7 @@
           <li><a href="programme">Le language de programation avec arduino</a>
             <ul>
               <li><a href="#codemin">Instruction minimale</a></li>
-              <li><a href="#variable">Les différents type de variables</a></li>
+              <li><a href="#variable">Les différents type de données</a></li>
               <li><a href="#fonction">Les fonctions</a></li>
               <li><a href="#structurecontrole">Les structures de contrôle</a>
                 <ul>
@@ -171,7 +171,8 @@ void loop(){
           </article>
 
           <article id="variable"></article>
-            <h3>Les différent type de variables</h3>
+            <h3>Les différent type de données</h3>
+            <p>Un type de données décrit une certaine quantité d'objet de données (variables) qui ont tous la même structure.</p>
             <!-- tableau avec les diférent type de variable -->
             <table class="blueTable">
               <caption>Types de variables</caption>
@@ -217,8 +218,20 @@ void loop(){
 
 
 
-          <article id="fonction"></article>
-
+          <article id="fonction">
+            <h3>Les fonctions</h3>
+            <p>On connait déjà deux fonction: loop() et setup (). Une fonction est une séquence d’instructions réalisant un calcul ou une tâche. Une fonction peut posséder des paramètres d’entrée (des arguments) et peut également retourner des valeurs de sortie.</p>
+            <pre><code class="language-arduino">float moyenne (float a, float b){ //float = type de données, moyenne = nom de la fonction, a et b = deux varible différentes de type float.
+  //instruction a réaliser lors de l'execution de la fonction             
+  return (a+b)/2;                 //la fonction donne en sortie la moyenne de a et b.
+}
+void setup() {
+  Serial.begin(9600); 
+}
+void loop() { 
+  Serial.print(moyenne (4,8));    //on affiche le resultat de la fonction moyenne soit la moyenne de 4 et 8 donc 6. 
+}</code></pre>
+          </article>  
           <article id="operateurs">
             <h3>Les opérateurs</h3>
             <!-- tableau avec les opérateurs -->
