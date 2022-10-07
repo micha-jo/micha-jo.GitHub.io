@@ -47,7 +47,8 @@
           <li><a href="programme">Le language de programation avec arduino</a>
             <ul>
               <li><a href="#codemin">Instruction minimale</a></li>
-              <li><a href="#variables">Les variables</a></li>
+              <li><a href="#variable">Les différents type de variables</a></li>
+              <li><a href="#fonction">Les fonctions</a></li>
               <li><a href="#structurecontrole">Les structures de contrôle</a>
                 <ul>
                   <li><a href="#si">L'instruction Si (if)</a></li>
@@ -152,9 +153,71 @@
           <h2>Le language de programation avec arduino</h2>
           <p>Un langage de programmation est un langage permettant à un être humain d'écrire un ensemble d'instructions (code source) qui seront directement converties en langage machine grâce à un compilateur (c'est la compilation). L'exécution d'un programme Arduino s'effectue de manière séquentielle, c'est-à-dire que les instructions sont exécutées les unes à la suite des autres.</p>
         </section>
+          <!-- les bases du code arduino -->
+          <article id="codemin">
+            <h3>les bases du code arduino</h3>
+              <pre><code class="language-arduino">//Ceci est un commentaire sur une seul ligne 
+/*ceci est un commentaire 
+sur plusieurs lignes*/
           
-          <article id="codemin"></article>
-          <article id="variables"></article>
+// fonction d'initialisation de la carte et déclaration des variables
+void setup(){
+  // contenu de l'initialisation
+  }
+// fonction principale, elle se répète (s’exécute) à l'infini
+void loop(){
+  // contenu de votre programme
+  }</code></pre>
+          </article>
+
+          <article id="variable"></article>
+            <h3>Les différent type de variables</h3>
+            <!-- tableau avec les diférent type de variable -->
+            <table class="blueTable">
+              <caption>Types de variables</caption>
+              <thead>
+                <tr>
+                  <th>Type</th>
+                  <th>Explication</th>
+                </tr>
+              </thead>
+            
+              <tbody>
+                
+                <tr>
+                  <td>int</td>
+                  <td>Entier compris entre -32 768 et 32767</td>
+                </tr>
+                <tr>
+                  <td>long</td>
+                  <td>Entier compris entre -2<sup>31</sup> et 2<sup>31</sup></td>
+                </tr>
+                <tr>
+                  <td>float</td>
+                  <td>Nombre décimal compris entre -3.4*10<sup>38</sup> et 3.4*10<sup>38</sup></td>
+                </tr>
+                <tr>
+                  <td>boolean</td>
+                  <td>Booléen, valeurs prend 2 type de réponses soit 0 soit 1 </td>
+                </tr>
+                <tr>
+                  <td>char</td>
+                  <td>Prend la valeur d’un caractère </td>
+                </tr>
+                <tr>
+                  <td>string</td>
+                  <td>Chaine de caractère</td>
+                </tr>
+                <tr>
+                  <td>array</td>
+                  <td>Tableau </td>
+                </tr>
+              </tbody>
+            </table>
+
+
+
+          <article id="fonction"></article>
 
           <article id="operateurs">
             <h3>Les opérateurs</h3>
@@ -275,10 +338,18 @@ switch (expression) {
 
           <article id="pour">
             <h4>La boucle pour (for)</h4>
+            <p>Cette fonction permet de répéter une action, un bout de programme autant de fois qu’on le souhaite.</p>
+            <pre><code class="language-arduino">for(/*initialisation de la variable*/ ; /*condition de la boucle*/  ; /*instruction à exécuter*/){
+  // ligne de code à exécuter
+  }</code></pre>
           </article>  
 
           <article id="tantQue">
             <h4>La boucle tant que (while)</h4>
+            <p>En anglais, le mot « while » signifie « tant que ». Donc le programme que l’on va écrire, s’exécutera « tant que » la condition sera vraie (ou fausse).</p>
+            <pre><code class="language-arduino">while(condition1 ; condition2){
+  Instruction...  // tant que les conditions sont respectées les instructions sont éxécuté
+}</code></pre>
           </article>  
 
         </section>
