@@ -1008,7 +1008,7 @@ void setup()
 void loop(){
     for (int thisNote = 0; thisNote < 8; thisNote++){
         // pin8 output the voice, every scale is 0.5 sencond
-        tone(8, melody[thisNote], duration);
+        tone(3, melody[thisNote], duration); //3 est la broche sur laquel il faut branché la borne positive du buzzer
         // Output the voice after several minutes
         delay(1000);
     }</code></pre>
