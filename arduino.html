@@ -63,12 +63,13 @@
             <ul>
               <li><a href="#bouton">Les boutons</a></li>
               <li><a href="#potentiometre">Les potentiometres</a></li>
+              <li><a href="#joystick">Les joysticks</a></li>
               <li><a href="#led">Les leds</a></li>
-              <li><a href="#ledrgb">Les leds RGBs</a></li>
-              <li><a href="#buzzeractif">Les buzzers actifs</a></li>
-              <li><a href="#buzzerpassif">Les buzzers passifs</a></li>
+              <li><a href="#ledrgb">Les bandes leds RGBs</a></li>
               <li><a href="#servomoteur">Les servos moteurs</a></li>
               <li><a href="#capteurultrasons">Les capteurs ultrasons</a></li>
+              <li><a href="#bluetooth">Le controle bluetooth avec HC-05 et bluetooth electronics</a></li>
+              <li><a href="#buzzer">Les buzzers passifs</a></li>
               
             </ul>
           </li>
@@ -377,7 +378,7 @@ switch (expression) {
         <section id="bibliotheque">
           <h2>bibliotheque</h2>
             
-          <article class="bouton">
+          <article id="bouton">
             <header class="article bouton">
               <h3>Les boutons</h3>
               <img src="./images/boutonseul.jpg" alt="image de bouton"  height="100">
@@ -511,7 +512,7 @@ else if ( etatbouton2 == LOW && onOff==1){//si le bouton2 est appuyer (etat bout
           </article>
 
           <!-- Les potentiometres -->
-          <article class="potentiometre">
+          <article id="potentiometre">
             <!-- en-tete -->
             <header class="article potentiometre">
               <h3>Les potentiometres</h3>
@@ -556,7 +557,7 @@ else if ( etatbouton2 == LOW && onOff==1){//si le bouton2 est appuyer (etat bout
           </article>
 
           <!-- composant -->
-          <article class="joystick">
+          <article id="joystick">
             <!-- en-tete -->
             <header class="article joystick">
               <h3>Les joysticks</h3>
@@ -612,7 +613,7 @@ void loop() {
             </div>
           </article>
 
-          <article class="led">
+          <article id="led">
             <header class="article led">
               <h3>Les leds</h3>
               <img src="./images/led.jpg" alt="image d'une led" height="100">
@@ -664,7 +665,149 @@ void loop() {
           </article>
 
           <!-- composant -->
-          <article class="ultrasons">
+          <article id="ledrgb">
+            <!-- en-tete -->
+            <header class="article">
+              <h3>Les bandes leds</h3>
+              <img src="" alt="" height="100">
+            </header>
+            
+            <!-- explication -->
+            <p></p>
+            <div class="remarque"> 
+              <p>    
+              </p>
+            </div> 
+            <!-- shema de montage et liste de composants -->
+            <div class="montage">
+              <h4>Montage</h4>
+              <div class="composantschema">
+                <div class="composant">
+                  <h5>Composants</h5>
+                  <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </div>
+                <div class="schema">
+                  <img height="400" src="" alt="">
+                </div>
+              </div>
+            </div>
+            
+            <div class="code">
+              <h4>Code</h4>
+              <pre><code class="language-arduino"></code></pre>
+            </div> 
+          </article>
+
+          <!-- composant -->
+          <article id ="servomoteur">
+            <!-- en-tete -->
+            <header class="article servomoteur">
+              <h3>Les servo moteurs</h3>
+              <img src="./images/servomoteur.jpg" alt="image d'un servo moteur" height="100">
+            </header>
+            
+            <!-- explication -->
+            <p>Les servomoteurs sont des moteurs d'un type particulier, conçu pour faire tourner quelque chose jusqu'à une position bien précise et capable de maintenir cette position jusqu'à l'arrivée d'une nouvelle instruction.</p>
+            <div class="remarque"> 
+              <p>En ajoutant deux resistance il est possible de le tranformer en un moteur capable de fonctionner en conitnue dans les deux sens. </p>
+            </div> 
+            <!-- shema de montage et liste de composants -->
+            <div class="montage">
+              <h4>Montage</h4>
+              <div class="composantschema">
+                <div class="composant">
+                  <h5>Composants</h5>
+                  <ul>
+                    <li>Une carte Arduino</li>
+                    <li>Une platine d'essai (breadboard)</li>
+                    <li>Des fils </li>
+                    <li>Un servomoteur</li>
+                  </ul>
+                </div>
+                <div class="schema">
+                  <img height="400" src="./images/montageservomoteur.png" alt="shema de montage du servomoteur">
+                </div>
+              </div>
+            </div>
+            
+            <div class="code">
+              <h4>Code 1: Réglage de la direction</h4>
+              <pre><code class="language-arduino">#include <Servo.h>
+Servo monservo;
+int degre = 90; 
+
+void setup()
+{
+    monservo.attach(3);                     //le moteur est connecter à la broche 3 (pwm)
+    monservo.write(degre);                  //met le servo à 90°
+    Serial.begin (9600);                    //initialisation du port serie 
+    
+}
+void loop()
+{
+  if (Serial.available() )                  //verifie si un message a été reçu
+{ 
+    //Si un message a été reçu  faire ceci
+    degre = (Serial.readString()).toInt();  // lit la valeur qu'on a envoyé, la tranforme en un entier et l'enregistre dans la variable degre
+  
+    monservo.write(degre);                  // le servo va a l'angle de valeur degre
+    Serial.print ("le moteur tourne à: ");  //afficher le texte 
+    Serial.print (degre);                   //afficher la valeur de degre
+    Serial.println (" degre");              //afficher le texte
+}       
+}</code></pre>
+
+
+              <h4>Code 2: Réglage du sens</h4>
+              <pre><code class="language-arduino">/!\ ce code n'est pas fini
+#include <Servo.h>
+Servo monservo;
+int sens ; 
+
+int avantArriere (String msg){      //fonction qui s'ocucpe du pillotage du moteur
+  if (msg =="avant"){
+    sens =1000; 
+    Serial.println("Le moteur va dans le sens normal");
+    return sens; 
+    }
+  else if (msg =="arriere"){
+    sens 2000;
+    Serial.println("Le moteur va dans le sens inverse"); 
+    return sens;}
+  else {
+    sens =1500; 
+    Serial.println("Le moteur est arreté");
+    return sens;}
+}
+
+void setup()
+{
+    monservo.attach(3);               //le moteur est connecte à la broche 3 
+    Serial.begin (9600);              //initialisation du port serie 
+    Serial.println ("taper avant ou arrier pour aller dans un sens ou dans l'autre");//afficher le texte
+}
+void loop()
+{
+  
+  if (Serial.available() )              //verifie si un message a été reçu
+{ 
+    //Si un message a été reçu  faire ceci
+    String msg = (Serial.readString());  // lit la valeur qu'on a envoyé et l'enregistre dans la variable msg
+  
+    monservo.write(avantArriere (msg)); 
+}       
+}</code></pre>
+            </div> 
+          </article>
+
+          <!-- composant -->
+          <article id ="ultrasons">
             <!-- en-tete -->
             <header class="article ultrasons">
               <h3>Les capteur ultrasons</h3>
@@ -721,8 +864,156 @@ void loop() {
 }</code></pre>
             </div> 
           </article>
+
+
+          <!-- composant -->
+          <article id ="bluetooth">
+            <!-- en-tete -->
+            <header class="article">
+              <h3>Le controle bluetooth avec HC-05 et bluetooth electronics</h3>
+              <img src="./images/HC-05.jpg" alt="image d'un module HC-05" height="100">
+            </header>
+            
+            <!-- explication -->
+            <p>Votre carte Arduino peut communiquer avec d’autres appareils(Smartphone, ordinateur ou un autres microcontrôleurs) par liaison Bluetooth en utilisant un module HC-05 (maître/esclave). Cela vous permet de connecter la carte Arduino à un autre système afin d’envoyer et de recevoir des données.</p>
+            <div class="remarque"> 
+              <p><a href="https://www.keuwl.com/electronics/rduino/bluet/10-stepper-motor/" target="_blank">ressource bluetooth electronics</a></p>
+            </div> 
+            <!-- shema de montage et liste de composants -->
+            <div class="montage">
+              <h4>Montage</h4>
+              <div class="composantschema">
+                <div class="composant">
+                  <h5>Composants</h5>
+                  <ul>
+                    <li>Une carte Arduino</li>
+                    <li>Une platine d'essai (breadboard)</li>
+                    <li>Des fils </li>
+                    <li>Module HC-05 ou HC-06</li>
+                  </ul>
+                </div>
+                <div class="schema">
+                  <img height="400" src="./images/montgeHC-05.png" alt="schema de montage du module HC-05">
+                </div>
+              </div>
+            </div>
+            
+            <div class="code">
+              <h4>Code</h4>
+              <pre><code class="language-arduino">#include <SoftwareSerial.h>   // librairie pour creer une nouvelle connexion serie max 9600 baud
+SoftwareSerial BTSerial(10, 11); // RX | TX  = > BT-TX=10 BT-RX=11
+
+void setup()
+{
+  Serial.begin(9600);
+  BTSerial.begin(9600);
+}
+
+void loop() {
+  
+  while(BTSerial.available()){
+    message = BTSerial.readString();
+    
+    if(message == "A"){
+      //instruction si l'application à envoyer "A" lors de l'appui sur un bouton /!\ au saut de ligne au espace 
+      BTSerial.println("Le bouton est appuyé");
+      Serial.println("Le bouton est appuyé");
+    }
+      if(message == "a"){
+      //instruction si l'application à envoyer "A" lors de l'appui sur un bouton /!\ au saut de ligne au espace 
+      BTSerial.println("Le bouton n'est pas appuyé");
+      Serial.println("Le bouton est appuyé");
+    }
+  
+      if(message.endsWith("d*\n")== true ){
+    
+        pad_x = message[2]&message[3]&message[4];
+        BTSerial.println(pad_x);
+        Serial.println(pad_x);
+      }
+    
+    if(message.endsWith("d*\n")== true ){
+    
+        pad_x= BTSerial.parseInt();
+        Serial.println(pad_x);
+        BTSerial.println(pad_x);
+    }
+    
+    while(message.endsWith("s*\n")== true){
+        pad_y=-BTSerial.parseInt();
+        Serial.println(pad_y);
+        BTSerial.println(pad_y);  
+      }
+    }
+}</code></pre>
+            </div> 
+          </article>
           
-          
+          <!-- composant -->
+          <article id="buzzer">
+            <!-- en-tete -->
+            <header class="article">
+              <h3>Les buzzer actifs</h3>
+              <img src="" alt="" height="100">
+            </header>
+            
+            <!-- explication -->
+            <p>Les buzzers électroniques sont alimentés en courant continu et équipés de circuits intégrés. Ils sont largement utilisés dans les ordinateurs, imprimantes, alarmes, jouets etc…. Il en existe deux types : les actifs et les passifs. Un buzzer actif possède un oscillateur intégré, il va donc générer un son lorsque le courant passe. Le principe de fonctionnement d’un buzzer passif est d’utiliser un signal PWM. Modulé à la bonne fréquence, la vibration génère différents sons. Exemple, envoyer une pulsation de 523Hz donne un Do, 587Hzdonne un Ré…</p>
+            <div class="remarque"> 
+              <p>On différencie les deux type de buzzer grace au petit circuit imprimé visible sur le buzzer passif. </p>
+            </div> 
+            <!-- shema de montage et liste de composants -->
+            <div class="montage">
+              <h4>Montage</h4>
+              <div class="composantschema">
+                <div class="composant">
+                  <h5>Composants</h5>
+                  <ul>
+                    <li>Une carte Arduino</li>
+                    <li>Une platine d'essai (breadboard)</li>
+                    <li>Des fils </li>
+                    <li>Un buzzer passif/actif</li>
+                  </ul>
+                </div>
+                <div class="schema">
+                  <img height="400" src="./images/montagebuzzer.png" alt="">
+                </div>
+              </div>
+            </div>
+            
+            <div class="code">
+              <h4>Code 1: Buzzer actif</h4>
+              <pre><code class="language-arduino">void setup () {
+  pinMode (12, OUTPUT); //initialise la broche 12 comme une sortie
+}
+void loop(){
+  tone (12,900); //allume le buzzer actif arduino, 900 est la fréquence du signal
+  delay (500);
+  noTone (12) // desactive le buzzer
+  delay (500) 
+}</code></pre>
+            </div> 
+            <div class="code">
+              <h4>Code 2: Buzzer passif</h4>
+              <pre><code class="language-arduino">#include "pitches.h"
+// notes in the melody:
+int melody[] = {
+    NOTE_C5, NOTE_D5, NOTE_E5, NOTE_F5, NOTE_G5, NOTE_A5, NOTE_B5, NOTE_C6};
+int duration = 500; // 500 miliseconds
+
+void setup()
+{
+}
+
+void loop(){
+    for (int thisNote = 0; thisNote < 8; thisNote++){
+        // pin8 output the voice, every scale is 0.5 sencond
+        tone(8, melody[thisNote], duration);
+        // Output the voice after several minutes
+        delay(1000);
+    }</code></pre>
+            </div> 
+          </article>
 
         </section>
     
@@ -733,42 +1024,4 @@ void loop() {
   </body>
 </html>
 
-          <!-- composant -->
-          <article class="capteurultrasons">
-            <!-- en-tete -->
-            <header class="article">
-              <h3></h3>
-              <img src="" alt="" height="100">
-            </header>
-            
-            <!-- explication -->
-            <p></p>
-            <div class="remarque"> 
-              <p>    
-              </p>
-            </div> 
-            <!-- shema de montage et liste de composants -->
-            <div class="montage">
-              <h4>Montage</h4>
-              <div class="composantschema">
-                <div class="composant">
-                  <h5>Composants</h5>
-                  <ul>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                  </ul>
-                </div>
-                <div class="schema">
-                  <img height="400" src="" alt="">
-                </div>
-              </div>
-            </div>
-            
-            <div class="code">
-              <h4>Code</h4>
-              <pre><code class="language-arduino"></code></pre>
-            </div> 
-          </article>
+          
