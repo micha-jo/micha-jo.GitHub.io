@@ -3,7 +3,6 @@
 
 table.blueTable {
     background-color: #EEEEEE;
-    width: 75%;
     text-align: left;
     border-collapse: collapse;
   }
@@ -43,7 +42,8 @@ table.blueTable {
     justify-content: space-around;
     align-items: flex-start;
 }
-  
+.partieprincipale{
+  width: 80%;
+  margin: 24px;
+}
 
-  
-  

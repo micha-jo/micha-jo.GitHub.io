@@ -49,15 +49,15 @@
               <li><a href="#codemin">Instruction minimale</a></li>
               <li><a href="#variable">Les différents type de données</a></li>
               <li><a href="#fonction">Les fonctions</a></li>
-              <li><a href="#structurecontrole">Les structures de contrôle</a>
-                <ul>
+              <li><a href="#operateur">Les opérateurs</a></li>
+            </ul>  
+          <li><a href="#structurecontrole">Les structures de contrôle</a>
+              <ul>  
                   <li><a href="#si">L'instruction Si (if)</a></li>
                   <li><a href="#case">L'instruction changer (switch)</a></li>
                   <li><a href="#pour">La boucle pour (for)</a></li>
                   <li><a href="#tantQue">La boucle tant que (while)</a></li>
                 </ul>
-              </li>
-            </ul>
           </li>
           <li><a href="#bibliotheque">bibliotheque</a>
             <ul>
@@ -84,6 +84,7 @@
             cite="https://www.positron-libre.com/electronique/arduino/arduino.php">
             Arduino® est un ensemble matériel et logiciel qui permet d'apprendre l'électronique (en s'amusant) tout en se familiarisant avec la programmation informatique. Arduino est en source libre; vous pouvez donc télécharger le schéma d'origine et l'utiliser pour élaborer votre propre carte et la vendre sans payer des droits d'auteur.
           </blockquot>
+
           <!-- materiel  -->
           <article id="materiel">
             <h3>Le materiel</h3>
@@ -109,6 +110,7 @@
               </figure>
             </div>
           </article>
+
           <!-- logiciel -->
           <article id="logiciel">
             <h3>Le logiciel</h3>
@@ -128,31 +130,34 @@
               <p>Fenêtre de l'IDE Arduino</p>
             </div>
           </article>
+
         </section>
 
+        <!-- la carte arduino -->
         <section id="generalite">
-          <!-- la carte arduino -->
           <h2>La carte Arduino</h2>
           <!-- les composants d'un carte arduino -->
-          <article id="composants"></article>
+          <article id="composants">
             <div class="imageAveclegende">
               <div class="schemArduino"><img height ="400"src="./images/shemaArduino.jpg" alt="Schéma d'une carte Arduino® Uno"></div>
               <p>Schéma d'une carte Arduino® Uno</p>
             </div>
+          </article>
           <!-- les ports et les differents signaux -->
-          <article id="port"></article>
-          <h3>Les différents type de signaux</h3>
-          <div class="imageAveclegende">
-            <div class="shemaPortArduinoNano"><img height ="400"src="./images/shemaPortArduinoNano.png" alt="Schéma des port d'une carte arduino Nano"></div>
-            <p>Schéma des port d'une carte arduino Nano</p>
-          </div>
-          
+          <article id="port">
+            <h3>Les différents type de signaux</h3>
+            <div class="imageAveclegende">
+              <div class="shemaPortArduinoNano"><img height ="400"src="./images/shemaPortArduinoNano.png" alt="Schéma des port d'une carte arduino Nano"></div>
+              <p>Schéma des port d'une carte arduino Nano</p>
+            </div>
+          </article>
+
         </section>
         <!-- la programation  -->
         <section id="programme">
           <h2>Le language de programation avec arduino</h2>
           <p>Un langage de programmation est un langage permettant à un être humain d'écrire un ensemble d'instructions (code source) qui seront directement converties en langage machine grâce à un compilateur (c'est la compilation). L'exécution d'un programme Arduino s'effectue de manière séquentielle, c'est-à-dire que les instructions sont exécutées les unes à la suite des autres.</p>
-        </section>
+        
           <!-- les bases du code arduino -->
           <article id="codemin">
             <h3>les bases du code arduino</h3>
@@ -170,7 +175,7 @@ void loop(){
   }</code></pre>
           </article>
 
-          <article id="variable"></article>
+          <article id="variable">
             <h3>Les différent type de données</h3>
             <p>Un type de données décrit une certaine quantité d'objet de données (variables) qui ont tous la même structure.</p>
             <!-- tableau avec les diférent type de variable -->
@@ -215,7 +220,7 @@ void loop(){
                 </tr>
               </tbody>
             </table>
-
+          </article>
 
 
           <article id="fonction">
@@ -231,8 +236,9 @@ void setup() {
 void loop() { 
   Serial.print(moyenne (4,8));    //on affiche le resultat de la fonction moyenne soit la moyenne de 4 et 8 donc 6. 
 }</code></pre>
-          </article>  
-          <article id="operateurs">
+          </article> 
+
+          <article id="operateur">
             <h3>Les opérateurs</h3>
             <!-- tableau avec les opérateurs -->
             <table class="blueTable">
@@ -299,8 +305,9 @@ void loop() {
                   <td>&ndash; y ou x = x * y</td>
                 </tr>
               </tbody>
-              </table>
+            </table>
           </article>
+
         </section>
         <!-- Les structures de controles -->
         <section id="structurecontrole">
@@ -366,73 +373,23 @@ switch (expression) {
           </article>  
 
         </section>
+
         <section id="bibliotheque">
           <h2>bibliotheque</h2>
             
-          <article class="led">
-            <header class="article">
-              <h3>Les leds</h3>
-              <img src="./images/led.jpg" alt="image d'une led" height="100">
-            </header>
-            
-            <p>Une LED est un composant capable d’émettre de la lumière lorsqu’il est parcouru par un courant électrique. </p>
-            <div class="remarque"> 
-              <p>Elle ne laisse passer le courant électrique que dans un seul sens, pour que le courant puisse passer: 
-                <ul>
-                  <li>la cathode (&quot-&quot , patte courte) doit être connecté du coté de la masse (GND).</li>
-                  <li>l’anode (&quot+&quot, patte longue) doit être connecté du coté du port numérique.</li>
-                </ul>
-              </p>
-            </div> 
-            <div class="montage">
-              <h4>Montage</h4>
-              <div class="composantschema">
-                <div class="composant">
-                  <h5>Composants</h5>
-                  <ul>
-                    <li>Une carte Arduino</li>
-                    <li>Une platine d'essai (breadboard)</li>
-                    <li>Des fils </li>
-                    <li>Une led rouge</li>
-                    <li>Une resistance de 220&Omega;</li>
-                  </ul>
-                </div>
-                <div class="schema">
-                  <img height="400" src="./images/montgeLed.png" alt="montage avec une led">
-                </div>
-              </div>
-            </div>
-          
-            <div class="code">
-              <h4>Code 1: Led qui clignotte</h4>
-              <pre><code class="language-arduino">#define ledRouge 2            //Declaration de la led rouge sur la broche (pin) 2
-
-void setup() {
-  pinMode(ledRouge, OUTPUT);   //initialisation de ledRouge comme une sortie (output)
-}
-
-void loop() {
-  digitalWrite(ledRouge, HIGH);//Allume la led, definie ledRouge sur le niveau haut
-  delay(1000);                 //Le programme attend 1 seconde avant d'executer la prochaine instruction
-  digitalWrite(ledRouge, LOW); //Etteind la led, definie ledRouge sur le niveau bas
-  delay(1000);                 //Le programme attend 1 seconde avant d'executer la prochaine instruction
-}</code></pre>
-            </div>
-          </article>
-          
           <article class="bouton">
-            <header class="article">
+            <header class="article bouton">
               <h3>Les boutons</h3>
               <img src="./images/boutonseul.jpg" alt="image de bouton"  height="100">
             </header>
             
-
+            
             <p>Un bouton poussoir est un interrupteur (ou contacteur) monostable : il retourne seul dans la position repos (« relâché »). Un bouton poussoir fournit une information logique (Appuyé / Relâché).</p>
             <div class="remarque"> 
               <p>Les connecteur 1&amp;3 et 2&amp;4 sont relié entre eux.</p>
               <img height="200"src="./images/bouton.jpg" alt="bouton poussoir">
             </div> 
-
+            
             <div class="montage">
               <h4>Montage 1: Un seul bouton</h4>
               <div class="composantschema">
@@ -442,16 +399,16 @@ void loop() {
                     <li>Carte arduino</li>
                     <li>Une platine d'essai (breadboard)</li>
                     <li>Des fils </li>
-                    <li>Une resistance de 10K&Omega;</li>
+                    <li>Une resistance de 10 K&Omega;</li>
                     <li>Un bouton poussoir</li>
                   </ul>
                 </div>
-                <div class="schema">
+                <div class="schema boutonseul">
                   <img height="400" src="./images/montgebouton.png" alt="schema de montage d'un bouton poussoir">
                 </div>
               </div>
             </div>
-          
+            
             <div class="code">
               <h4>Code 1: Bouton poussoir</h4>
               <pre><code class="language-arduino">#define bouton 2                                  //declaration de la variable boouton connecté à la broche 2
@@ -464,13 +421,13 @@ void setup()
 
 void loop()
 {
-    
+  
   if (digitalRead(bouton) == HIGH){                //si le bouton est sur l'état haut 
-    Serial.println ("le bouton n'est pas appuyer");//alors on affiche: "le bouton n'est pas appuyer" dans le port serie
-  }
-  else {                                           //sinon
-    Serial.println ("le bouton est appuyer");      //on affiche: "le bouton est appuyer" dans le port serie
-  }
+  Serial.println ("le bouton n'est pas appuyer");//alors on affiche: "le bouton n'est pas appuyer" dans le port serie
+}
+else {                                           //sinon
+  Serial.println ("le bouton est appuyer");      //on affiche: "le bouton est appuyer" dans le port serie
+}
 }</code></pre>
               <h4>Code 2: Interupteur</h4>
               <pre><code class="language-arduino">#define bouton 2                       //declaration de bouton connecter à la broche 2 
@@ -489,10 +446,10 @@ void loop()
   if (etatbouton == LOW){               //si le bouton est appuyer (etat bouton sur niveau bas) 
                                         //alors on verifie une deuxième condition 
     if (onOff ==0){                     //si onOff = 1 
-        onOff=1;                        //alors la variable onOff prend la valeur de 1
+      onOff=1;                        //alors la variable onOff prend la valeur de 1
         Serial.println ("On");          //et on affiche On dans le moniteur serie 
 
-    }
+      }
     else {                              //sinon 
       onOff=0;                          //la variable onOff prend la valeur de 0
       Serial.println ("Off");           //et on affiche Off dans le moniteur serie
@@ -509,11 +466,11 @@ void loop()
                     <li>Carte arduino</li>
                     <li>Une platine d'essai (breadboard)</li>
                     <li>Des fils </li>
-                    <li>Deux resistance de 10K&Omega;</li>
+                    <li>Deux resistance de 10 K&Omega;</li>
                     <li>Deux bouton poussoir</li>
                   </ul>
                 </div>
-                <div class="schema">
+                <div class="schema deuxbouton">
                   <img height="400" src="./images/montge2bouton.png" alt="schema de montage avec deux boutons poussoirs">
                 </div>
               </div>
@@ -542,7 +499,7 @@ delay(100);                               //attente de 200 msec pour eviter la l
 if (etatbouton1 == LOW && onOff==0){      //si le bouton1 est appuyer (etat bouton sur niveau bas)et si onOff est sur off
   onOff=1;                                //alors la variable onOff prend la valeur de 1, onoff = On 
   Serial.println ("On");                  //et on affiche On dans le moniteur serie 
-
+  
 }
 else if ( etatbouton2 == LOW && onOff==1){//si le bouton2 est appuyer (etat bouton sur niveau bas)et si onOff est sur on
   onOff=0;                                //alors la variable onOff prend la valeur de 0, onoff = Off
@@ -550,14 +507,13 @@ else if ( etatbouton2 == LOW && onOff==1){//si le bouton2 est appuyer (etat bout
 }
 }</code></pre>
 
-            </div>
+</div>
           </article>
 
           <!-- Les potentiometres -->
-
           <article class="potentiometre">
             <!-- en-tete -->
-            <header class="article">
+            <header class="article potentiometre">
               <h3>Les potentiometres</h3>
               <img src="./images/potentiometre.jpg" alt="Un potentiometre" height="100">
             </header>
@@ -582,42 +538,209 @@ else if ( etatbouton2 == LOW && onOff==1){//si le bouton2 est appuyer (etat bout
                     <li>Des fils</li>
                     <li>Un potentiometre</li>
                     <li>Une led</li>
-                    <li>Une resistance de 220&Omega;</li>
+                    <li>Une resistance de 220 &Omega;</li>
                   </ul>
                 </div>
-                <div class="schema">
+                <div class="schema potentiometre">
                   <img height="400" src="" alt="">
                 </div>
               </div>
             </div>
             <!-- code  -->
             <div class="code">
-              <h4>Code 1: Reglage du detail</h4>
+              <h4>Code 1: Reglage du delai</h4>
               <pre><code class="language-arduino"></code></pre>
               <h4>Code 2: Reglage de a luminosité</h4>
               <pre><code class="language-arduino"></code></pre>
             </div>
           </article>
 
+          <!-- composant -->
+          <article class="joystick">
+            <!-- en-tete -->
+            <header class="article joystick">
+              <h3>Les joysticks</h3>
+              <img src="./images/joystick.jpg" alt="joystick" height="100">
+            </header>
+            
+            <!-- explication -->
+            <p>Le joystick est un capteur de position qui renvoie deux valeurs analogiques représentant sa position X,Y. Il peut servir d’interface pour naviguer dans un menu ou bien pour piloter un objet en direction ou en vitesse.</p>
+            <div class="remarque"> 
+              <p>Le joystick est composé de deux potentiomètres couplés mécaniquement placés de manière à détecter les composantes horizontale et verticale du joystick. </p>
+            </div> 
+            <!-- shema de montage et liste de composants -->
+            <div class="montage">
+              <h4>Montage</h4>
+              <div class="composantschema">
+                <div class="composant">
+                  <h5>Composants</h5>
+                  <ul>
+                    <li>Une carte arduino</li>
+                    <li>Une platine d'essai (breadboard)</li>
+                    <li>Des fils</li>
+                    <li>Un joystick</li>
+                  </ul>
+                </div>
+                <div class="schema joystick">
+                  <img height="400" src="./images/montgejoystick.png" alt="shema de montage d'un joystick">
+                </div>
+              </div>
+            </div>
+            
+            <div class="code">
+              <h4>Code</h4>
+              <pre><code class="language-arduino">#define bouton 2                         // declaration de bouton connecter à la broche 2 
+#define verticale A0                     // declaration du potentiometre verticale sur la broche A0
+#define horizontale A1                   // declaration du potentiometre horizontale sur la broche A1
+
+void setup() {
+  pinMode(bouton, INPUT);                 //initialisation du bouton comme une entré
+  digitalWrite(bouton, HIGH);             //on dit au bouton qu'il est en position élevé
+  Serial.begin(9600);                     //initialisation du port serie 
+}
+
+void loop() {
+  Serial.print("bouton:  ");              //on ecrit dans le port serie le texte entre guillmets 
+  Serial.println(digitalRead(bouton));    //on lit la valeur numérique du bouton puis on l'ecrit dans le port serie 
+  Serial.print("verticale: ");            //on ecrit dans le port serie le texte entre guillmets 
+  Serial.println(analogRead(verticale);   //on lit la valeur analogique de la composante verticales et on l'affiche 
+  Serial.print("horizontale: ");          //on ecrit dans le port serie le texte entre guillmets 
+  Serial.println(analogRead(horizontale));//on lit la composotant horizontale puis on l'afiche 
+  Serial.print("\n");                     //on saute une ligne dans le port serie 
+  delay(500);                             //on attend 0.5 sec avant de reffaire le programme 
+}</code></pre>
+            </div>
+          </article>
+
+          <article class="led">
+            <header class="article led">
+              <h3>Les leds</h3>
+              <img src="./images/led.jpg" alt="image d'une led" height="100">
+            </header>
+            
+            <p>Une LED est un composant capable d’émettre de la lumière lorsqu’il est parcouru par un courant électrique. </p>
+            <div class="remarque"> 
+              <p>Elle ne laisse passer le courant électrique que dans un seul sens, pour que le courant puisse passer: 
+                <ul>
+                  <li>la cathode (&quot-&quot , patte courte) doit être connecté du coté de la masse (GND).</li>
+                  <li>l’anode (&quot+&quot, patte longue) doit être connecté du coté du port numérique.</li>
+                </ul>
+              </p>
+            </div> 
+            <div class="montage">
+              <h4>Montage</h4>
+              <div class="composantschema">
+                <div class="composant">
+                  <h5>Composants</h5>
+                  <ul>
+                    <li>Une carte Arduino</li>
+                    <li>Une platine d'essai (breadboard)</li>
+                    <li>Des fils </li>
+                    <li>Une led rouge</li>
+                    <li>Une resistance de 220 &Omega;</li>
+                  </ul>
+                </div>
+                <div class="schema led">
+                  <img height="400" src="./images/montgeLed.png" alt="montage avec une led">
+                </div>
+              </div>
+            </div>
           
-        
+            <div class="code">
+              <h4>Code 1: Led qui clignotte</h4>
+              <pre><code class="language-arduino">#define ledRouge 2            //Declaration de la led rouge sur la broche (pin) 2
+
+void setup() {
+  pinMode(ledRouge, OUTPUT);   //initialisation de ledRouge comme une sortie (output)
+}
+
+void loop() {
+  digitalWrite(ledRouge, HIGH);//Allume la led, definie ledRouge sur le niveau haut
+  delay(1000);                 //Le programme attend 1 seconde avant d'executer la prochaine instruction
+  digitalWrite(ledRouge, LOW); //Etteind la led, definie ledRouge sur le niveau bas
+  delay(1000);                 //Le programme attend 1 seconde avant d'executer la prochaine instruction
+}</code></pre>
+            </div>
+          </article>
+
+          <!-- composant -->
+          <article class="ultrasons">
+            <!-- en-tete -->
+            <header class="article ultrasons">
+              <h3>Les capteur ultrasons</h3>
+              <img src="./images/ultrasons.jpg" alt="capteur ultrasons" height="100">
+            </header>
+            
+            <!-- explication -->
+            <p>Le capteur à ultrasons (également souvent appelé sonar ou télémètre à ultrasons) détermine la distance d’un objet de la même manière que les chauves-souris ou les dauphins.</p>
+            <div class="remarque"> 
+              <p> Le capteur permet une mesure d’un objet situé à une distance allant de 2cm à 4m et fourni une mesure avec une précision de 3mm. Principe de fonctionnement: (0)Un signal de déclenchement (trigger) est émis pendant 10µs (1)Le module émet 8 signaux (minimum) à 40kHz. (2)Le module se met à l’écoute d’un signal de retour (3)Le temps entre l’émission et la réception est le temps nécessaire au signal pour  faire l’aller et le retour vers l’objet qui a réfléchi celui-ci</p>
+            </div> 
+            <!-- shema de montage et liste de composants -->
+            <div class="montage">
+              <h4>Montage</h4>
+              <div class="composantschema">
+                <div class="composant">
+                  <h5>Composants</h5>
+                  <ul>
+                    <li>Une carte Arduino</li>
+                    <li>Une platine d'essai (breadboard)</li>
+                    <li>Des fils </li>
+                    <li>Un capteur ultrasons</li>
+                  </ul>
+                </div>
+                <div class="schema ultrasons">
+                  <img height="400" src="./images/montgeultrasons.png" alt="shema de capteur ultrasons">
+                </div>
+              </div>
+            </div>
+            
+            <div class="code">
+              <h4>Code</h4>
+              <pre><code class="language-arduino">#include "SR04.h" //on inclu la bibliotheque pour le capteur ultra sons 
+#define TRIG_PIN 4 
+#define ECHO_PIN 2
+SR04 sr04 = SR04(ECHO_PIN,TRIG_PIN);
+long a;
+
+void setup() {
+   Serial.begin(9600);
+}
+
+void loop() {
+   a=sr04.Distance();
+   if (a<5){
+     Serial.println("Vous êtes proche"); 
+   }
+  else {
+    Serial.println("Vous êtes loin");
+  }
+  Serial.print(a);
+  Serial.println("cm");
+  delay(1000);
+}</code></pre>
+            </div> 
+          </article>
+          
+          
+
         </section>
     
-    
+        
     
       </div>
-  </div>
+    </div>
   </body>
 </html>
 
           <!-- composant -->
-          <article class="potentiometre">
+          <article class="capteurultrasons">
             <!-- en-tete -->
             <header class="article">
               <h3></h3>
               <img src="" alt="" height="100">
             </header>
-           
+            
             <!-- explication -->
             <p></p>
             <div class="remarque"> 
@@ -643,9 +766,9 @@ else if ( etatbouton2 == LOW && onOff==1){//si le bouton2 est appuyer (etat bout
                 </div>
               </div>
             </div>
-          
+            
             <div class="code">
               <h4>Code</h4>
               <pre><code class="language-arduino"></code></pre>
-            </div> -->
+            </div> 
           </article>
