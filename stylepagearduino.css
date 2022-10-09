@@ -42,8 +42,19 @@ table.blueTable {
     justify-content: space-around;
     align-items: flex-start;
 }
-.partieprincipale{
-  width: 80%;
-  margin: 24px;
+
+.lesDeuxPartie{
+width: 80%;
+margin: 24px;  
 }
+.partieprincipale{
+  margin: 24px;
+
+
+}
+.partiesecondaire{
+  margin: 24px   24px;
+  
+}
+
 
