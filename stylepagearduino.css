@@ -76,6 +76,7 @@ a:hover::after{
   order : 100;
 
 }
+
 nav ul li {
   display: inline-block;
   margin: 12px;
@@ -114,9 +115,12 @@ hr {
   padding-top: 250px
 }
 .partiesecondaire ul{
-  
   width: 80%;
-  
+  padding: 12px;
+
+}
+.partiesecondaire ul li{
+  padding: 6px;
 }
 section{
   
