@@ -10,21 +10,28 @@
     <link type="text/css" media="screen" rel="stylesheet" href="stylepagearduino.css" />
     <link rel="stylesheet" href="./librairiecss/prism.css">
     <script type="text/javascript" src="./librairieJS/prism.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
 
   <body>
     <!-- bare de navigation -->
-    <header>
-      <nav role="navigation">
-        <div class="icons"><a href="#"></a></div>
-        <ul>
-          <li><a href="index.html">NovaMake</a></li>
-          <li><a href="arduino.html">Arduino</a></li>
-          <li><a href="nousContacter.html">Nous contacter</a></li>
-        </ul>
-      </nav>
-      <h1>Arduino</h1>
-      <hr />
+    <header class="en-tete">
+      <div class="navigation">
+        <a href="#"><div class="icons"></div></a>
+
+        
+        <label for="menuBurger">☰</label>
+
+        <nav role="navigation" id="navMenu">
+            <ul>
+              <li><a href="index.html">NovaMake</a></li>
+              <li><a href="arduino.html">Arduino</a></li>
+              <li><a href="nousContacter.html">Nous contacter</a></li>
+            </ul>
+          </nav>
+      </div>
+      
+      
     </header>
 
     <!-- page du site -->
@@ -78,7 +85,8 @@
 
       <!-- le grod de la page -->
       <div id="partieprincipale">
-        <!-- definition -->
+        <h1>Arduino</h1>
+      <hr /><!-- definition -->
         <section id="definition">
           <h2>Qu'est ce qu'arduino?</h2>
           <blockquot
