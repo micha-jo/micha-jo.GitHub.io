@@ -136,6 +136,7 @@ figcaption{
 img {
   border-radius: 10px;
   box-shadow: 2px 2px 10px #00000075;
+  margin:12px;
 }
 
 #bibliotheque article header{
@@ -165,6 +166,9 @@ img {
   border: solid 2px #183a637b; 
   border-radius: 10px;
   padding: 12px 
+}
+.schema {
+  padding: 12px
 }
 
 
