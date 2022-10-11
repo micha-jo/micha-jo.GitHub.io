@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="./librairiecss/prism.css">
     <script type="text/javascript" src="./librairieJS/prism.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   </head>
 
   <body>
@@ -30,7 +31,8 @@
             </ul>
           </nav>
       </div>
-      
+      <h1>Arduino</h1>
+      <div class="line"></div>
       
     </header>
 
@@ -39,6 +41,8 @@
       
       <!-- menu de navigation  -->
       <div class="partiesecondaire">
+        <div class="ul">
+          <div class="image-navigation"></div>
         <ul>
           <li><a href="#definition">Qu'est ce qu'arduino?</a>
               <ul>
@@ -51,7 +55,7 @@
               <li><a href="#port">Les différents type de signaux</a></li>
             </ul>
           </li>
-          <li><a href="programme">Le language de programation avec arduino</a>
+          <li><a href="#programme">Le language de programation avec arduino</a>
             <ul>
               <li><a href="#codemin">Instruction minimale</a></li>
               <li><a href="#variable">Les différents type de données</a></li>
@@ -76,17 +80,17 @@
               <li><a href="#servomoteur">Les servos moteurs</a></li>
               <li><a href="#capteurultrasons">Les capteurs ultrasons</a></li>
               <li><a href="#bluetooth">Le controle bluetooth avec HC-05 et bluetooth electronics</a></li>
-              <li><a href="#buzzer">Les buzzers passifs</a></li>
+              <li><a href="#buzzer">Les buzzers</a></li>
               
             </ul>
           </li>
         </ul>
       </div>
+      </div>
 
       <!-- le grod de la page -->
-      <div id="partieprincipale">
-        <h1>Arduino</h1>
-      <hr /><!-- definition -->
+      <div class="partieprincipale">
+        
         <section id="definition">
           <h2>Qu'est ce qu'arduino?</h2>
           <blockquot
@@ -394,7 +398,11 @@ switch (expression) {
             
             
             <p>Un bouton poussoir est un interrupteur (ou contacteur) monostable : il retourne seul dans la position repos (« relâché »). Un bouton poussoir fournit une information logique (Appuyé / Relâché).</p>
-            <div class="remarque"> 
+            
+            <div class="remarque">
+
+              <i class="fa-solid fa-circle-info"></i>
+
               <p>Les connecteur 1&amp;3 et 2&amp;4 sont relié entre eux.</p>
               <img height="200"src="./images/bouton.jpg" alt="bouton poussoir">
             </div> 
@@ -530,6 +538,7 @@ else if ( etatbouton2 == LOW && onOff==1){//si le bouton2 est appuyer (etat bout
             <!-- explication -->
             <p>Le potentiomètre (résistance variable) est utilisé pour ajuster ou régler divers paramètres dans un circuit électrique – puissance, tension, volume sonore, etc.</p>
             <div class="remarque"> 
+              <i class="fa-solid fa-circle-info"></i>
               <p> 
                 Le potentiometre peut prendre une valeure comprise entre 0 et 1023.
               </p>
@@ -575,6 +584,7 @@ else if ( etatbouton2 == LOW && onOff==1){//si le bouton2 est appuyer (etat bout
             <!-- explication -->
             <p>Le joystick est un capteur de position qui renvoie deux valeurs analogiques représentant sa position X,Y. Il peut servir d’interface pour naviguer dans un menu ou bien pour piloter un objet en direction ou en vitesse.</p>
             <div class="remarque"> 
+              <i class="fa-solid fa-circle-info"></i>
               <p>Le joystick est composé de deux potentiomètres couplés mécaniquement placés de manière à détecter les composantes horizontale et verticale du joystick. </p>
             </div> 
             <!-- shema de montage et liste de composants -->
@@ -629,6 +639,7 @@ void loop() {
             
             <p>Une LED est un composant capable d’émettre de la lumière lorsqu’il est parcouru par un courant électrique. </p>
             <div class="remarque"> 
+              <i class="fa-solid fa-circle-info"></i>
               <p>Elle ne laisse passer le courant électrique que dans un seul sens, pour que le courant puisse passer: 
                 <ul>
                   <li>la cathode (&quot-&quot , patte courte) doit être connecté du coté de la masse (GND).</li>
@@ -683,6 +694,7 @@ void loop() {
             <!-- explication -->
             <p>Les led adressables peuvent être connectées en série et chaque led peut avoir sa propre couleur à un instant donné. Avec des led RGB câblées en série, toutes les led ont la même couleur en même temps. Dans l'univers Arduino, la led adressable est principalement utilisée pour faire des effets lumineux avec des rubans ou des matrices à led.</p>
             <div class="remarque"> 
+              <i class="fa-solid fa-circle-info"></i>
               <p>    
               </p>
             </div> 
@@ -722,7 +734,8 @@ void loop() {
             
             <!-- explication -->
             <p>Les servomoteurs sont des moteurs d'un type particulier, conçu pour faire tourner quelque chose jusqu'à une position bien précise et capable de maintenir cette position jusqu'à l'arrivée d'une nouvelle instruction.</p>
-            <div class="remarque"> 
+            <div class="remarque">
+              <i class="fa-solid fa-circle-info"></i> 
               <p>En ajoutant deux resistance il est possible de le tranformer en un moteur capable de fonctionner en conitnue dans les deux sens. </p>
             </div> 
             <!-- shema de montage et liste de composants -->
@@ -825,6 +838,7 @@ void loop()
             <!-- explication -->
             <p>Le capteur à ultrasons (également souvent appelé sonar ou télémètre à ultrasons) détermine la distance d’un objet de la même manière que les chauves-souris ou les dauphins.</p>
             <div class="remarque"> 
+              <i class="fa-solid fa-circle-info"></i>
               <p> Le capteur permet une mesure d’un objet situé à une distance allant de 2cm à 4m et fourni une mesure avec une précision de 3mm. Principe de fonctionnement: (0)Un signal de déclenchement (trigger) est émis pendant 10µs (1)Le module émet 8 signaux (minimum) à 40kHz. (2)Le module se met à l’écoute d’un signal de retour (3)Le temps entre l’émission et la réception est le temps nécessaire au signal pour  faire l’aller et le retour vers l’objet qui a réfléchi celui-ci</p>
             </div> 
             <!-- shema de montage et liste de composants -->
@@ -885,7 +899,8 @@ void loop() {
             <!-- explication -->
             <p>Votre carte Arduino peut communiquer avec d’autres appareils(Smartphone, ordinateur ou un autres microcontrôleurs) par liaison Bluetooth en utilisant un module HC-05 (maître/esclave). Cela vous permet de connecter la carte Arduino à un autre système afin d’envoyer et de recevoir des données.</p>
             <div class="remarque"> 
-              <p><a href="https://www.keuwl.com/electronics/rduino/bluet/10-stepper-motor/" target="_blank">ressource bluetooth electronics</a></p>
+              <i class="fa-solid fa-circle-info"></i>
+              <p><a class ="lienbt"href="https://www.keuwl.com/electronics/rduino/bluet/10-stepper-motor/" target="_blank">ressource bluetooth electronics</a></p>
             </div> 
             <!-- shema de montage et liste de composants -->
             <div class="montage">
@@ -968,6 +983,7 @@ void loop() {
             <!-- explication -->
             <p>Les buzzers électroniques sont alimentés en courant continu et équipés de circuits intégrés. Ils sont largement utilisés dans les ordinateurs, imprimantes, alarmes, jouets etc…. Il en existe deux types : les actifs et les passifs. Un buzzer actif possède un oscillateur intégré, il va donc générer un son lorsque le courant passe. Le principe de fonctionnement d’un buzzer passif est d’utiliser un signal PWM. Modulé à la bonne fréquence, la vibration génère différents sons. Exemple, envoyer une pulsation de 523Hz donne un Do, 587Hzdonne un Ré…</p>
             <div class="remarque"> 
+              <i class="fa-solid fa-circle-info"></i>
               <p>On différencie les deux type de buzzer grace au petit circuit imprimé visible sur le buzzer passif. </p>
             </div> 
             <!-- shema de montage et liste de composants -->
@@ -1029,8 +1045,8 @@ void loop(){
     
       </div>
     </div>
-    <hr>
+    
+    <div class="line"></div>
   </body>
 </html>
 
-          
