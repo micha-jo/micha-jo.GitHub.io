@@ -719,9 +719,57 @@ void loop() {
             </div>
             
             <div class="code">
-              <h4>Code</h4>
+              <h4>Code 1: Initilisation des couleurs</h4>
+              <pre><code class="language-arduino">#include <fastLed.h>
+#define LED_PIN 2    //led pin connecter a la broche 2
+#define NUM_LEDS 12  //nombre de led
+CRGB leds[NUM_LEDS]
+
+void setup() {
+  FastLED.addLeds<WS2812, LED_PIN, RGB>(leds, NUM_LEDS);
+  FastLED.setMaxPowerInVoltsAndMilliamps(5,500)
+  FastLED.clear()
+  FastLED.show()
+}
+
+void loop() {
+  leds[0]= CRGB (255 , 0 , 0);
+  leds[1]= CRGB (0 , 255 , 0);
+  leds[2]= CRGB (0 , 0, 255);
+  FastLED.show()
+}</code></pre>
+              <h4>Code 2: Lumiére qui clignotent (augmentation et diminution de la luminosité)</h4>
+              <pre><code class="language-arduino">#include <fastLed.h>
+#define LED_PIN 2    //led pin connecter a la broche 2
+#define NUM_LEDS 12  //nombre de led
+CRGB leds[NUM_LEDS]
+
+void setup() {
+  FastLED.addLeds<WS2812, LED_PIN, RGB>(leds, NUM_LEDS);
+  FastLED.setMaxPowerInVoltsAndMilliamps(5,500)
+  FastLED.clear()
+  FastLED.show()
+}
+
+void loop() {
+  for (int i=0 ; i<NUM_LEDS; i++){
+  leds[i]=CRGB(255,0,0)
+  FastLED.setBrightness(6*i)
+  FastLED.show()
+  delay(50)
+  }
+  for (int i=NUM_LEDS ; i>0; i--){
+  leds[i]=CRGB(255,0,0)
+  FastLED.setBrightness(60-2*i)
+  FastLED.show()
+  delay(50)
+  }
+}</code></pre>
+              <h4>Code 1: Initilisation des couleurs</h4>
               <pre><code class="language-arduino"></code></pre>
+            
             </div> 
+            
           </article>
 
           <!-- composant -->
