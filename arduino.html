@@ -720,7 +720,7 @@ void loop() {
             
             <div class="code">
               <h4>Code 1: Initilisation des couleurs</h4>
-              <pre><code class="language-arduino">#include <fastLed.h>
+              <pre><code class="language-arduino">#include"fastLed.h"
 #define LED_PIN 2    //led pin connecter a la broche 2
 #define NUM_LEDS 12  //nombre de led
 CRGB leds[NUM_LEDS]
@@ -739,7 +739,7 @@ void loop() {
   FastLED.show()
 }</code></pre>
               <h4>Code 2: Lumiére qui clignotent (augmentation et diminution de la luminosité)</h4>
-              <pre><code class="language-arduino">#include <fastLed.h>
+              <pre><code class="language-arduino">#include "fastLed.h"
 #define LED_PIN 2    //led pin connecter a la broche 2
 #define NUM_LEDS 12  //nombre de led
 CRGB leds[NUM_LEDS]
@@ -766,37 +766,32 @@ void loop() {
   }
 }</code></pre>
               <h4>Code 3: chamgement de la couleur</h4>
-              <pre><code class="language-arduino">#include <FastLED.h>
-#define LED_PIN 2
-#define NUM_LEDS 60
-
-CRGB leds[NUM_LEDS];
-
+              <pre><code class="language-arduino">#include "fastLed.h"
+#define LED_PIN 2    //led pin connecter a la broche 2
+#define NUM_LEDS 12  //nombre de led
+CRGB leds[NUM_LEDS]
 
 void setup() {
-  FastLED.addLeds<WS2812, LED_PIN, GRB>(leds, NUM_LEDS);
-  FastLED.setMaxPowerInVoltsAndMilliamps(5, 500);
-  FastLED.clear();
-  FastLED.show();
-  
+  FastLED.addLeds<WS2812, LED_PIN, RGB>(leds, NUM_LEDS);
+  FastLED.setMaxPowerInVoltsAndMilliamps(5,500)
+  FastLED.clear()
+  FastLED.show()
 }
 
 void loop() {
-  // Turn lights from green to blue from left to right   R G B 
-  for (int i=0; i<NUM_LEDS; i++){
-    leds[i] = CRGB(0, 255 - 4*i, 4*i );
-    FastLED.setBrightness(2*i);
-    FastLED.show();
-    delay(50);
+  for (int i=0 ; j&lt;NUM_LEDS; j++){
+  leds[i]=CRGB(0,0,0)
+  FastLED.setBrightness(6*j)
+  FastLED.show()
+  delay(50)
   }
-  // Turn lights from blue to magenta from right to left 
-  for (int i=NUM_LEDS; i>0; i--){
-    leds[i] = CRGB(4*i,0 , 255-4*i);
-    FastLED.setBrightness(100-i);
-    FastLED.show();
-    delay(50);
+  for (int j=NUM_LEDS ; j>0; j--){
+  leds[i]=CRGB(255,0,0)
+  FastLED.setBrightness(60-2*j)
+  FastLED.show()
+  delay(50)
   }
-} </code></pre>
+}</code></pre>
             
             </div> 
             
@@ -899,7 +894,7 @@ void loop()
     //Si un message a été reçu  faire ceci
     String msg = (Serial.readString());  // lit la valeur qu'on a envoyé et l'enregistre dans la variable msg
   
-    monservo.write(avantArriere (msg)); 
+    monservo.writeMilliseconds(avantArriere (msg)); 
 }       
 }</code></pre>
             </div> 
