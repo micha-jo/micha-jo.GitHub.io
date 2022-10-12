@@ -129,11 +129,12 @@ padding: 12px;
   padding: 0px 24px;
   border-radius: 20px;
 }
-.ul{
+div .ul{
   position: fixed;
+  width: 20%;
 }
 .ul ul {
-  margin: 24px;
+  margin: 12px;
 }
 
 .troisTypeArduino{
