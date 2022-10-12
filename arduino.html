@@ -548,6 +548,7 @@ else if ( etatbouton2 == LOW && onOff==1){//si le bouton2 est appuyer (etat bout
             <div class="montage">
               <h4>Montage</h4>
               <div class="composantschema">
+                
                 <div class="composant">
                   <h5>Composants</h5>
                   <ul>
@@ -560,14 +561,35 @@ else if ( etatbouton2 == LOW && onOff==1){//si le bouton2 est appuyer (etat bout
                   </ul>
                 </div>
                 <div class="schema potentiometre">
-                  <img height="400" src="" alt="">
+                  <img height="400" src="./images/montgepotentiometre.png" alt="montage potentiometre">
                 </div>
               </div>
             </div>
             <!-- code  -->
             <div class="code">
               <h4>Code 1: Reglage du delai</h4>
-              <pre><code class="language-arduino"></code></pre>
+              <pre><code class="language-arduino">#define ledRouge 3
+#define boutonVolume A0
+int valeur;
+
+void setup() {
+  // put your setup code here, to run once:
+pinMode (ledRouge, OUTPUT);
+pinMode (boutonVolume, INPUT);
+Serial.begin(9600);
+}
+
+void loop() {
+
+  valeur = analogRead(boutonVolume);
+
+  delay(valeur);
+  digitalWrite (ledRouge, HIGH);
+  delay(valeur);
+  digitalWrite (ledRouge, LOW);
+  Serial.println(valeur);
+
+}</code></pre>
               <h4>Code 2: Reglage de a luminosité</h4>
               <pre><code class="language-arduino"></code></pre>
             </div>
