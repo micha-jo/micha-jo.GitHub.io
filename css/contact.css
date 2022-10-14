@@ -37,7 +37,7 @@ h1{
 
 .contenu:hover{
   transition: 1.3s;
-  transform: scale(1.2);
+  transform: scale(1.05);
 }
 .grid-container{
   
