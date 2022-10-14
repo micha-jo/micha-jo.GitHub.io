@@ -185,9 +185,13 @@ margin: 60px auto 48px;
   
  
 }
-.img img:hover{
+.img-explication :hover img{
   filter: brightness(20%);
-}
+} 
+
+
+
+
 
 .titre {
   font-size: calc(1rem + 1vw);
