@@ -1,0 +1,217 @@
+@font-face {
+  font-family: "font-1";
+  src: url(./font/Roboto-Medium.ttf);
+}
+* {
+  font-family: serif;
+  margin: 0px;
+  padding: 0px;
+  list-style-type: none;
+  scroll-behavior: smooth;
+}
+::selection {
+  color: whitesmoke;
+  background-color: #444444;
+}
+
+/* Lien hyper texte copie */
+a,
+a:visited {
+  cursor: pointer;
+  position: relative;
+  text-decoration: none;
+  color: #fefeff;
+  transition: 0.1s linear;
+  font-size: calc(0.8rem +0.8vw);
+}
+a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  background: #fefeff;
+  height: 1px;
+  bottom: -4px;
+  left: 0px;
+  transform-origin: left;
+}
+a:hover {
+  transform: scale(1.04);
+  color: rgb(217, 217, 217);
+}
+a:hover::after {
+  animation: animLink 1.4s infinite ease-in-out;
+}
+@keyframes animLink {
+  50% {
+    transform: scaleX(0.2);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+.icons {
+  background: url(./images/robotsEnCircuitImprimés1.jpg);
+  width: 48px;
+  height: 48px;
+  position: relative;
+  top: 6px;
+  left: 6px;
+}
+
+.navigation {
+  background: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  height: 60px;
+  position: fixed;
+  z-index: 100;
+}
+
+nav ul li {
+  display: inline-block;
+  margin: 12px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "font-1", sans-serif;
+  padding: 12px;
+}
+h1 {
+  padding-top: 72px;
+  text-align: center;
+  font-size: calc(3rem + 5vw);
+  color: #183a63;
+  text-transform:uppercase;
+}
+h2{
+  margin: 24px;
+  text-align: center;
+  font-size: calc(1rem + 2vw);
+}
+h3{
+  margin: 12px;
+  font-size: calc(1rem + 1vw);
+}
+
+
+.line {
+  width: 80%;
+  border: #183a63 solid 2px;
+  margin: auto;
+}
+
+.lesDeuxPartie{
+  width: 90%;
+  margin: 48px auto 48px 0;
+  display: grid;
+  grid-template-columns: 25% 75%;
+justify-content: center;
+  
+  
+}
+.partiesecondaire{
+  background-color: #183a63;
+  border-radius : 0px 0px 20px 0px;
+padding: 12px;
+
+  
+}
+.partieprincipale{
+  width: 100%;
+  margin: 0px 24px;
+  background: rgba(245, 245, 245, 0.251);
+  padding: 0px 24px;
+  border-radius: 20px;
+}
+div .ul{
+  position: fixed;
+  width: 20%;
+  display: -webkit-box;
+-webkit-box-orient: vertical;
+-webkit-line-clamp: 30;
+overflow:scroll;
+
+
+}
+.ul ul {
+  margin: 12px;
+}
+
+.troisTypeArduino{
+  display: flex;
+  margin : 24px
+}
+figcaption{
+  font-style: italic;
+}
+
+.composantschema{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap-reverse;
+
+}
+.composant{
+  margin: 24px;
+}
+
+.remarque {
+  margin: 36px ;
+  border-left: #183a63 solid 5px ;
+  background-color: rgba(245, 242, 240, 0.362);
+  border-radius: 5px 10px 10px 2px;
+  box-shadow: 1px 0px 20px #02050955;
+  padding: 12px 24px;
+  position: relative;
+}
+
+i{
+  position: absolute;
+  z-index: 1100;
+  top: -12px;
+  left :-20px; 
+  transform: scale(3);
+}
+.lienbt{
+  color: black;
+}
+
+
+
+
+
+
+
+
+
+
+table.blueTable {
+  background-color: #eeeeee;
+  text-align: left;
+  border-collapse: collapse;
+}
+table.blueTable td,
+table.blueTable th {
+  border: 1px solid #aaaaaa;
+  padding: 3px 2px;
+}
+table.blueTable tbody td {
+  font-size: 13px;
+}
+table.blueTable tr:nth-child(even) {
+  background: #d0e4f5;
+}
+table.blueTable thead {
+  background: linear-gradient(to bottom, #5592bb 0%, #327cad 66%, #1c6ea4 100%);
+  border-bottom: 2px solid #444444;
+  font-size: 15px;
+  font-weight: bold;
+  color: #ffffff;
+}

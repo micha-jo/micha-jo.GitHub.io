@@ -1,0 +1,112 @@
+:root{
+  --color-1: rgba(9, 58, 71, 1);
+  --color-2: rgba(13, 141, 172, 1);
+  --color-3: rgba(3, 150, 166, 1);
+  --color-4: rgba(243, 210, 194, 1);
+  --color-5:rgba(242, 65, 98, 1); 
+}
+
+@font-face {
+  font-family: font1;
+  src: url(../font/Roboto-Medium.ttf);
+}
+@font-face {
+  font-family: font2;
+  src: url(../font/PlayfairDisplay-Regular.ttf);
+}
+
+html{
+  background: white;
+}
+h1{
+  font-size: calc(2rem + 5vw);
+  text-align: center;
+  margin-top: 100px;
+  font-family: font1 ,sans-serif;
+  color: white;
+  letter-spacing: 6px;
+}
+.contenu{
+  background-color: var(--color-1);
+  width: 70%;
+  margin: auto;
+  padding: 0px 48px;
+  border-radius: 20px;
+  
+}
+
+.contenu:hover{
+  transition: 1.3s;
+  transform: scale(1.2);
+}
+.grid-container{
+  
+  display: grid;
+  grid-template-columns: 30% 70%;
+  padding: 20px;
+  
+}
+
+form{
+  
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas: 
+  "i1 i2"
+  "ta ta"
+  "bt bt";
+}
+input, textarea{
+  font-size: calc(1rem + 1vw);
+  margin:12px;
+  height: 60px;
+  border: 1px var(--color-1);
+  border-radius: 5px;
+  padding:12px;
+  font-family: "font-1";
+
+}
+#firstname{
+  grid-area: i1;
+}
+#surname{
+  grid-area: i2;
+}
+textarea{
+  grid-area: ta;
+  height: 200px;
+  resize: none;
+}
+input[type="submit"]{
+  grid-area: bt;
+  cursor:pointer;
+  transition: 0.5s;
+}
+input[type="submit"]:hover{
+  background: var(--color-2);
+  color: white;
+}
+
+@media screen and (max-width: 1000px){
+  .grid-container{
+      display: block
+  }
+}
+
+
+
+
+
+
+
+#copyrightEtIcons
+{
+  position: absolute;  
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  margin: 12px;
+  font-size: calc(1rem + 1vw)
+}
+
